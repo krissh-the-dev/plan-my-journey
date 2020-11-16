@@ -15,7 +15,10 @@ const theme = createMuiTheme({
       light: '#a155e7'
     },
     secondary: pink,
-    type: colorScheme
+    type: colorScheme,
+    typography: {
+      fontFamily: ['Google Sans', 'Product Sans', 'google-sans', 'product-sans', 'Roboto'].join(',')
+    }
   }
 });
 

@@ -1,13 +1,16 @@
 import React from 'react';
-import App from './ThemeEngine';
 import { Auth0Provider } from '@auth0/auth0-react';
+import dotenv from 'dotenv';
 
+import App from './ThemeEngine';
+
+dotenv.config();
 export default function AuthEngine() {
   return (
     <Auth0Provider
-      domain='dev-kp29pj5u.us.auth0.com'
-      clientId='6V81CLNPzDl6IGXhHcLd6BEFaRtQJBiH'
-      redirectUri={window.location.origin}
+      domain={process.env.REACT_APP_DOMAIN}
+      clientId={process.env.REACT_APP_CLIENT_ID}
+      redirectUri='http://localhost:3000/dashboard'
     >
       <App />
     </Auth0Provider>
